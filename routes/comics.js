@@ -16,9 +16,9 @@ router.get("/comics", async (req, res) => {
     if (skip) {
       APIurl += `&skip=${skip}`;
     }
-    // if name is defined
+    // if title is defined
     if (title) {
-      APIurl += `&name=${title}`;
+      APIurl += `&title=${title}`;
     }
 
     const response = await axios.get(APIurl);
