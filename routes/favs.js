@@ -29,7 +29,7 @@ router.post("/favs", isAuthenticated, async (req, res) => {
 // Route to get all favs
 router.get("/favs", isAuthenticated, async (req, res) => {
   try {
-    const allFavs = await Favs.find();
+    const allFavs = await Favs.find({ owner: req.user });
     res.status(200).json({ allFavs });
   } catch (error) {
     res.status(500).json({ message: error.message });

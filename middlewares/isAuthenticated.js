@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const User = require("../models/User");
 
 const isAuthenticated = async (req, res, next) => {
+  console.log(req.headers.authorization);
   const token = req.headers.authorization.replace("Bearer ", "");
   const userConnected = await User.findOne({ token: token }).select(
     "account _id"
