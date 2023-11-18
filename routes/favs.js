@@ -15,8 +15,10 @@ router.post("/favs", isAuthenticated, async (req, res) => {
       itemId,
       title,
       name,
-      path,
-      extension,
+      thumbnail: {
+        path,
+        extension,
+      },
       owner: req.user,
     });
     await newFav.save();
