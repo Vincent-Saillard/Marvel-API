@@ -4,6 +4,7 @@ const Favs = mongoose.model("Favs", {
   itemId: String,
   title: String,
   name: String,
+
   path: String,
   extension: String,
   owner: {
